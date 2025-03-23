@@ -12,12 +12,12 @@ export const getSuggestedDocumentType = (
   if (currentPattern instanceof RegExp && currentPattern.test(value))
     return null
 
-  for (const { value: typeValue, label } of documentTypes) {
+  for (const { value: typeValue, } of documentTypes) {
     if (
       typeValue !== currentType &&
       regex[typeValue as TDocumentType]?.test(value)
     ) {
-      return `Можливо, ви мали на увазі: ${label}`
+      return null
     }
   }
 

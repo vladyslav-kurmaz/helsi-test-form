@@ -9,7 +9,7 @@ import { initialValues } from '../constants'
 import { FormApi } from 'final-form'
 
 const CreatePersonForm: React.FC<{
-  setFormData: (values: FormValues) => void
+  setFormData: (values: FormValues | null) => void
 }> = ({ setFormData }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -44,6 +44,7 @@ const CreatePersonForm: React.FC<{
 
   const handleClearForm = (form: FormApi<FormValues>) => {
     resetFormState(form)
+    setFormData(null)
   }
 
   return (
@@ -59,7 +60,7 @@ const CreatePersonForm: React.FC<{
             <DocumentInfo />
           </Flex>
 
-          <Flex gap={10} style={{ marginTop: '30px' }}>
+          <Flex gap={10} style={{ marginTop: '30px', marginBottom: '15px' }}>
             <Button
               type='primary'
               htmlType='submit'
