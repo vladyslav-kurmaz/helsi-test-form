@@ -1,0 +1,31 @@
+.ant-switch-handle {
+  top: -5px !important;
+}
+
+.custom-switch-unchecked .ant-switch-handle:before {
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+  padding-top: -5px !important;
+  transform: translateX(5px) !important;
+  border: 1px solid rgb(220, 219, 219) !important;
+}
+
+.custom-switch-checked .ant-switch-handle:before {
+  background-color: #bfbfbf !important;
+  border-radius: 50% !important;
+  padding-top: 5px !important;
+  transform: translateX(-5px) !important;
+  border: 1px solid rgb(220, 219, 219) !important;
+}
+
+.ant-switch {
+  border-radius: 15px !important;
+}
+
+.ant-switch-checked {
+  background-color: #ffffff !important;
+}
+
+.ant-switch {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
