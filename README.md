@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+# 📝 Тестове завдання для Helsi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Цей проєкт є тестовим завданням для **Helsi**.
 
-Currently, two official plugins are available:
+Мета — реалізація великої форми з використанням **різних типів валідації** (обовʼязкові поля, валідація по regex, динамічні умови, кастомні повідомлення, тощо).  
+Форма побудована у вигляді секцій (пацієнт, контакти, документи), з підтримкою динамічного керування станами полів.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Технології
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚙️ **TypeScript** – типобезпечність
+- 🎨 **Ant Design** – UI бібліотека
+- 🔁 **Final Form** – керування станом форми
+- ⚡️ **Vite** – інструмент для швидкої збірки та розробки
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ▶️ Запуск проєкту
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+> **Вимоги:** Node.js версії **18 або вище**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Встановлення залежностей
+
+```bash
+npm install
+# або
+yarn install
+# або
+pnpm install
+
+# 🔧 Запуск у режимі розробки
+npm run dev
+# або
+yarn dev
+# або
+pnpm dev
+
+# 🛠 Збірка проєкту для продакшну
+npm run build
+# або
+yarn build
+# або
+pnpm build
+
+# 👀 Перегляд продакшн-білду локально
+npm run preview
+# або
+yarn preview
+# або
+pnpm preview
