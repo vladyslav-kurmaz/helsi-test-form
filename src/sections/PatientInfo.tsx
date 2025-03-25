@@ -2,7 +2,7 @@ import TextField from '../components/FormFields/TextField/TextField'
 import SelectField from '../components/FormFields/SelectField/SelectField'
 import DatePickerField from '../components/FormFields/DatePickerField/DatePickerField'
 import { Flex } from 'antd'
-import { genderOptions } from '../constants'
+import { genderOptions } from '../constants/selectOptions'
 
 const PatientInfo = () => {
   return (
