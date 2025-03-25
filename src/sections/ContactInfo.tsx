@@ -1,5 +1,5 @@
-import TextField from '../components/UI/TextField/TextField'
-import SelectField from '../components/UI/SelectField/SelectField'
+import TextField from '../components/FormFields/TextField/TextField'
+import SelectField from '../components/FormFields/SelectField/SelectField'
 import { contactMethods } from '../constants'
 import { Flex } from 'antd'
 
@@ -12,7 +12,6 @@ const ContactInfo = () => {
             name='birthCountry'
             label=''
             variant='underlined'
-            required={true}
             placeholder='Країна народження*'
           />
         </div>
@@ -21,7 +20,6 @@ const ContactInfo = () => {
             name='birthPlace'
             label=''
             variant='underlined'
-            required={true}
             placeholder='Місце народження*'
           />
         </div>
@@ -40,7 +38,6 @@ const ContactInfo = () => {
             name='secretWord'
             label=''
             variant='underlined'
-            required={true}
             placeholder='Секретне слово (не менше 6 символів)*'
           />
         </div>

@@ -1,5 +1,3 @@
-import { ValidatorFn } from '../utils/validation'
-
 export const formatPhone = (value: string): string => {
   const digits = value.replace(/\D/g, '')
   let result = '+38'
@@ -30,8 +28,3 @@ export const normalizePhoneInput = (prev: string, next: string): string => {
   }
   return formatPhone(next)
 }
-
-export const optionalValidator =
-  (validator: ValidatorFn<string>): ValidatorFn<string> =>
-  (value) =>
-    !value ? undefined : validator(value)

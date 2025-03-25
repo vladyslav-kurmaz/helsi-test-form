@@ -1,68 +1,53 @@
-import { Field, useFormState } from 'react-final-form'
+import { Field } from 'react-final-form'
 import { Form, Select } from 'antd'
 import { CaretDownOutlined, InfoCircleOutlined } from '@ant-design/icons'
-import {
-  requiredSelect,
-  composeValidators,
-  ValidatorFn
-} from '../../../utils/validation'
-import { OptionType } from '../../../types/types'
 
 const { Option } = Select
 
 interface SelectFieldProps {
   name: string
   label: string
-  options: OptionType[]
-  validate?: ValidatorFn<string>
-  variant?: 'underlined' | 'outlined' | 'borderless' | 'filled'
+  options: { value: string; label: string }[]
+  placeholder?: string
   additionalHelperText?: string
-  required?: boolean
+  switchElem?: boolean
+  variant?: 'underlined' | 'outlined' | 'borderless' | 'filled'
 }
 
 const SelectField: React.FC<SelectFieldProps> = ({
   name,
   label,
   options,
-  validate,
-  variant = 'underlined',
+  placeholder = '',
   additionalHelperText,
-  required: isRequired = false
+  switchElem = false,
+  variant = 'underlined'
 }) => {
-  const { submitFailed } = useFormState()
-
-  const validators: ValidatorFn<string>[] = []
-
-  if (isRequired) {
-    validators.push(requiredSelect('Будь ласка, виберіть значення'))
-  }
-
-  if (validate) {
-    validators.push(validate)
-  }
-
-  const finalValidator = composeValidators(...validators)
-
   return (
-    <Field name={name} validate={finalValidator}>
+    <Field name={name}>
       {({ input, meta }) => {
-        const showError = meta.error && (meta.touched || submitFailed)
-        const helpText = showError
-          ? meta.error
-          : !isRequired && additionalHelperText
-          ? additionalHelperText
-          : null
+        const hasError = meta.error && (input.value || meta.submitFailed)
+        const showError = switchElem ? meta.touched && hasError : hasError
 
         return (
           <Form.Item
-            label={label}
+            label={
+              <span
+                style={{
+                  color: showError ? '#e74c3c' : undefined
+                }}
+              >
+                {label}
+              </span>
+            }
             validateStatus={showError ? 'error' : ''}
-            help={helpText}
+            help={showError ? meta.error : additionalHelperText || null}
           >
             <Select
               {...input}
-              onChange={input.onChange}
               value={input.value}
+              placeholder={placeholder}
+              variant={variant}
               suffixIcon={
                 showError ? (
                   <InfoCircleOutlined
@@ -72,7 +57,6 @@ const SelectField: React.FC<SelectFieldProps> = ({
                   <CaretDownOutlined style={{ fontSize: 18 }} />
                 )
               }
-              variant={variant}
             >
               <Option key='empty' value=''>
                 --Вибрати--

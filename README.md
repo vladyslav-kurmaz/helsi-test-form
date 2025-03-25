@@ -1,51 +1,76 @@
-# 📝 Тестове завдання для Helsi
+# 📝 Test Assignment for Helsi
 
-Цей проєкт є тестовим завданням для **Helsi**.
+This project is a test assignment for **Helsi**.
 
-Мета — реалізація великої форми з використанням **різних типів валідації** (обовʼязкові поля, валідація по regex, динамічні умови, кастомні повідомлення, тощо).  
-Форма побудована у вигляді секцій (пацієнт, контакти, документи), з підтримкою динамічного керування станами полів.
-
----
-
-## 🛠️ Технології
-
-- ⚙️ **TypeScript** – типобезпечність
-- 🎨 **Ant Design** – UI бібліотека
-- 🔁 **Final Form** – керування станом форми
-- ⚡️ **Vite** – інструмент для швидкої збірки та розробки
+The goal is to implement a large form using **different types of validation** (required fields, regex validation, dynamic conditions, custom messages, etc.).  
+The form is built in sections (patient, contacts, documents), with support for dynamic field state management.
 
 ---
 
-## ▶️ Запуск проєкту
+## 🛠️ Technologies
 
-> **Вимоги:** Node.js версії **18 або вище**
+- ⚙️ **TypeScript** – type safety
+- 🎨 **Ant Design** – UI library
+- 🔁 **Final Form** – form state management
+- ⚡️ **Vite** – fast build and development tool
 
-### Встановлення залежностей
+---
+
+## 🔄 Updates in Review Branch
+
+### Fixes and Improvements
+
+1. 🔧 **Form Validation**
+
+   - Improved handling of optional fields
+   - Added correct phone validation with empty value support
+   - Optimized Yup validation schemas
+
+2. 🎛️ **SwitchField Component**
+
+   - Redesigned architecture for better state synchronization
+   - Split into two components for better lifecycle management
+   - Fixed React Hooks issues
+   - Improved props typing
+
+3. 🔄 **State Synchronization**
+   - Optimized interaction between Final Form and local state
+   - Improved initial values handling
+   - Added correct switch state change handling
+
+---
+
+## ▶️ Project Setup
+
+> **Requirements:** Node.js version **18 or higher**
+
+### Installing Dependencies
 
 ```bash
 npm install
-# або
+# or
 yarn install
-# або
+# or
 pnpm install
 
-# 🔧 Запуск у режимі розробки
+# 🔧 Run in development mode
 npm run dev
-# або
+# or
 yarn dev
-# або
+# or
 pnpm dev
 
-# 🛠 Збірка проєкту для продакшну
+# 🛠 Build for production
 npm run build
-# або
+# or
 yarn build
-# або
+# or
 pnpm build
 
-# 👀 Перегляд продакшн-білду локально
+# 👀 Preview production build locally
 npm run preview
-# або
+# or
 yarn preview
-# або
+# or
 pnpm preview
+```
