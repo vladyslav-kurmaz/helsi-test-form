@@ -5,9 +5,9 @@ import PatientInfo from '../sections/PatientInfo'
 import ContactInfo from '../sections/ContactInfo'
 import DocumentInfo from '../sections/DocumentInfo'
 import { FormValues } from '../types/types'
-import { initialValues } from '../constants'
+import { initialValues } from '../constants/initialValues'
 import { FormApi } from 'final-form'
-import { useUserValidation } from '../components/hooks/useUserValidation'
+import { useUserValidation } from '../hooks/useUserValidation'
 
 const CreatePersonForm: React.FC<{
   setFormData: (values: FormValues | null) => void
@@ -59,7 +59,7 @@ const CreatePersonForm: React.FC<{
 
   return (
     <Form<FormValues>
-      onSubmit={(values, form) => handleSubmitForm(values, form)}
+      onSubmit={handleSubmitForm}
       initialValues={initialValues}
       validate={validate}
     >

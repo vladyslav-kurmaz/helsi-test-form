@@ -2,7 +2,7 @@ import TextField from '../components/FormFields/TextField/TextField'
 import SelectField from '../components/FormFields/SelectField/SelectField'
 import DatePickerField from '../components/FormFields/DatePickerField/DatePickerField'
 import { Flex, Typography } from 'antd'
-import { documentTypes } from '../constants'
+import { documentTypes } from '../constants/selectOptions'
 
 const DocumentInfo = () => {
   return (

@@ -1,6 +1,6 @@
 import TextField from '../components/FormFields/TextField/TextField'
 import SelectField from '../components/FormFields/SelectField/SelectField'
-import { contactMethods } from '../constants'
+import { contactMethods } from '../constants/selectOptions'
 import { Flex } from 'antd'
 
 const ContactInfo = () => {

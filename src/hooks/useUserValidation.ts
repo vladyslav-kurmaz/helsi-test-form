@@ -1,5 +1,5 @@
 import * as yup from 'yup'
-import { regex } from '../../utils/validation'
+import { regex } from '../constants/regex'
 import {
   FIELD_IS_REQUIRED,
   TO_SHORT,
@@ -8,9 +8,9 @@ import {
   EMAIL_ERROR,
   OTHER_DOCS_ERROR,
   REGISTRY_NUMBER_ERROR
-} from '../../constants/validationMessages'
-import { FormValues } from '../../types/types'
-import { documentTypes } from '../../constants'
+} from '../constants/validationMessages'
+import { FormValues } from '../types/types'
+import { documentTypes } from '../constants/selectOptions'
 
 export const useUserValidation = () => {
   const validationSchema = yup.object({

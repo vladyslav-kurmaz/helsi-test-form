@@ -1,5 +1,3 @@
-import { FormValues } from './types/types'
-
 export const documentTypes = [
   {
     value: 'passportBook',
@@ -47,26 +45,3 @@ export const genderOptions = [
   { value: 'male', label: 'Чоловіча' },
   { value: 'female', label: 'Жіноча' }
 ]
-
-export const initialValues: FormValues = {
-  lastName: '',
-  firstName: '',
-  middleName: '',
-  middleNameIsActive: false,
-  rnokpp: '',
-  rnokppIsActive: false,
-  birthDate: '',
-  gender: '',
-  birthCountry: '',
-  birthPlace: '',
-  secretWord: '',
-  email: '',
-  phone: '',
-  contactMethod: '',
-  documentType: '',
-  documentSeriesNumber: '',
-  issuedBy: '',
-  issuedDate: '',
-  expiryDate: '',
-  registryNumber: ''
-}
