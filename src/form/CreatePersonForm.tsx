@@ -7,13 +7,17 @@ import DocumentInfo from '../sections/DocumentInfo'
 import { FormValues } from '../types/types'
 import { initialValues } from '../constants'
 import { FormApi } from 'final-form'
+import { useUserValidation } from '../components/hooks/useUserValidation'
 
 const CreatePersonForm: React.FC<{
   setFormData: (values: FormValues | null) => void
 }> = ({ setFormData }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const validate = useUserValidation()
+
   const resetFormState = (form: FormApi<FormValues>) => {
+    form.reset()
     form.initialize(initialValues)
 
     setTimeout(() => {
@@ -31,11 +35,17 @@ const CreatePersonForm: React.FC<{
     setIsSubmitting(true)
 
     const cleanedValues = Object.fromEntries(
-      Object.entries(values).filter(([, v]) => v !== '' && v !== undefined)
+      Object.entries(values).filter(
+        ([key, v]) =>
+          v !== '' &&
+          v !== undefined &&
+          key !== 'middleNameIsActive' &&
+          key !== 'rnokppIsActive'
+      )
     )
 
     await new Promise((res) => setTimeout(res, 2000))
-    setFormData(cleanedValues)
+    setFormData(cleanedValues as FormValues)
 
     resetFormState(form)
 
@@ -43,7 +53,7 @@ const CreatePersonForm: React.FC<{
   }
 
   const handleClearForm = (form: FormApi<FormValues>) => {
-    resetFormState(form)
+    form.reset()
     setFormData(null)
   }
 
@@ -51,6 +61,7 @@ const CreatePersonForm: React.FC<{
     <Form<FormValues>
       onSubmit={(values, form) => handleSubmitForm(values, form)}
       initialValues={initialValues}
+      validate={validate}
     >
       {({ handleSubmit, form }) => (
         <AntForm layout='vertical' onFinish={handleSubmit}>

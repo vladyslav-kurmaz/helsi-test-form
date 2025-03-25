@@ -1,6 +1,6 @@
-import TextField from '../components/UI/TextField/TextField'
-import SelectField from '../components/UI/SelectField/SelectField'
-import DatePickerField from '../components/UI/DatePickerField/DatePickerField'
+import TextField from '../components/FormFields/TextField/TextField'
+import SelectField from '../components/FormFields/SelectField/SelectField'
+import DatePickerField from '../components/FormFields/DatePickerField/DatePickerField'
 import { Flex } from 'antd'
 import { genderOptions } from '../constants'
 
@@ -12,8 +12,6 @@ const PatientInfo = () => {
           name='lastName'
           label='Прізвище*'
           variant='underlined'
-          required={true}
-          additionalHelperText='Поле не може бути порожнім'
           placeholder='Дія'
         />
       </div>
@@ -22,8 +20,6 @@ const PatientInfo = () => {
           name='firstName'
           label='Ім’я*'
           variant='underlined'
-          required={true}
-          additionalHelperText='Поле не може бути порожнім'
           placeholder='Надія'
         />
       </div>
@@ -32,7 +28,6 @@ const PatientInfo = () => {
           name='middleName'
           label='По батькові'
           variant='underlined'
-          required={true}
           additionalHelperText='Немає по батькові згідно документів'
           placeholder='Володимирівна'
           switchElem={true}
@@ -52,19 +47,15 @@ const PatientInfo = () => {
         <DatePickerField
           name='birthDate'
           label='Дата народження*'
-          required={true}
           variant='underlined'
-          additionalHelperText='Поле не може бути порожнім'
         />
       </div>
       <div style={{ flex: '1 1 30%' }}>
         <SelectField
           name='gender'
           label='Стать*'
-          required={true}
           options={genderOptions}
           variant='underlined'
-          additionalHelperText='Поле не може бути порожнім'
         />
       </div>
     </Flex>

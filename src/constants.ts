@@ -2,24 +2,14 @@ import { FormValues } from './types/types'
 
 export const documentTypes = [
   {
-    value: 'additionalSave',
-    label: 'Посвідчення особи, яка потребує додаткового захисту',
-    example: 'АБВ12345'
-  },
-  {
-    value: 'passportId',
-    label: 'Паспорт (ID-картка)',
-    example: '123456789'
-  },
-  {
     value: 'passportBook',
     label: 'Паспорт (книжечка)',
     example: 'КН123456'
   },
   {
-    value: 'permanentResidence',
-    label: 'Посвідка на постійне проживання в Україні',
-    example: 'ПРЛ9876543'
+    value: 'passportId',
+    label: 'Паспорт (ID-картка)',
+    example: '123456789'
   },
   {
     value: 'refugeePermit',
@@ -30,6 +20,16 @@ export const documentTypes = [
     value: 'residencePermit',
     label: 'Посвідка про проживання',
     example: 'AB1234567'
+  },
+  {
+    value: 'additionalSave',
+    label: 'Посвідчення особи, яка потребує додаткового захисту',
+    example: 'АБВ12345'
+  },
+  {
+    value: 'permanentResidence',
+    label: 'Посвідка на постійне проживання в Україні',
+    example: 'ПРЛ9876543'
   },
   {
     value: 'temporaryPassport',
@@ -52,19 +52,21 @@ export const initialValues: FormValues = {
   lastName: '',
   firstName: '',
   middleName: '',
+  middleNameIsActive: false,
   rnokpp: '',
+  rnokppIsActive: false,
   birthDate: '',
   gender: '',
   birthCountry: '',
   birthPlace: '',
-  contactMethod: '',
   secretWord: '',
   email: '',
   phone: '',
+  contactMethod: '',
   documentType: '',
   documentSeriesNumber: '',
-  issueDate: '',
-  expiryDate: '',
   issuedBy: '',
+  issuedDate: '',
+  expiryDate: '',
   registryNumber: ''
 }

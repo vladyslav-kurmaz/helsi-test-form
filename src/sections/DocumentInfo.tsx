@@ -1,6 +1,6 @@
-import TextField from '../components/UI/TextField/TextField'
-import SelectField from '../components/UI/SelectField/SelectField'
-import DatePickerField from '../components/UI/DatePickerField/DatePickerField'
+import TextField from '../components/FormFields/TextField/TextField'
+import SelectField from '../components/FormFields/SelectField/SelectField'
+import DatePickerField from '../components/FormFields/DatePickerField/DatePickerField'
 import { Flex, Typography } from 'antd'
 import { documentTypes } from '../constants'
 
@@ -18,20 +18,13 @@ const DocumentInfo = () => {
             label='Тип документу*'
             options={documentTypes}
             variant='underlined'
-            required={true}
           />
           <DatePickerField
             name='issuedDate'
             label='Коли видано*'
             variant='underlined'
-            required={true}
           />
-          <TextField
-            name='issuedBy'
-            label='Ким видано*'
-            variant='underlined'
-            required={true}
-          />
+          <TextField name='issuedBy' label='Ким видано*' variant='underlined' />
         </Flex>
 
         <Flex vertical gap={15} style={{ width: '50%' }}>
@@ -40,14 +33,12 @@ const DocumentInfo = () => {
             label=''
             variant='underlined'
             placeholder='Серія (за наявності), номер*'
-            required={true}
             additionalHelperText='Номер введено некоректно, поле повинно містити 9 цифр'
           />
           <DatePickerField
             name='expiryDate'
             label='Діє до*'
             variant='underlined'
-            required={true}
           />
           <TextField
             name='registryNumber'
@@ -55,7 +46,6 @@ const DocumentInfo = () => {
             variant='underlined'
             placeholder='РРРРММДД-ХХХХХ'
             additionalHelperText='Номер введено некоректно. Приклад: РРРРММДД-ХХХХХ'
-            required={true}
           />
         </Flex>
       </Flex>

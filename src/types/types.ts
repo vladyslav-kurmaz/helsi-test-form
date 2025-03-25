@@ -1,9 +1,10 @@
 export interface FormValues {
   lastName?: string
   firstName?: string
-  middleName?: string
-  rnokppSwitch?: boolean
-  rnokpp?: string
+  middleName?: string | null
+  middleNameIsActive: boolean
+  rnokpp?: string | null
+  rnokppIsActive: boolean
   birthDate?: string
   gender?: string
   birthCountry?: string
@@ -15,7 +16,7 @@ export interface FormValues {
   documentType?: string
   documentSeriesNumber?: string
   issuedBy?: string
-  issueDate?: string
+  issuedDate?: string
   expiryDate?: string
   registryNumber?: string
 }
