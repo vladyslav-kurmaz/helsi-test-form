@@ -1,3 +1,4 @@
+import * as yup from 'yup'
 import { useState } from 'react'
 import { Form } from 'react-final-form'
 import { Button, Form as AntForm, Flex } from 'antd'
@@ -7,14 +8,13 @@ import DocumentInfo from '../sections/DocumentInfo'
 import { FormValues } from '../types/types'
 import { initialValues } from '../constants/initialValues'
 import { FormApi } from 'final-form'
-import { generateUserValidation } from '../helpers/generateUserValidation'
+import { validateFormValues } from '../helpers/validateFormValues'
+import { validationSchema } from '../constants/valdationSchema'
 
 const CreatePersonForm: React.FC<{
   setFormData: (values: FormValues | null) => void
 }> = ({ setFormData }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const validate = generateUserValidation()
 
   const resetFormState = (form: FormApi<FormValues>) => {
     form.reset()
@@ -61,7 +61,9 @@ const CreatePersonForm: React.FC<{
     <Form<FormValues>
       onSubmit={handleSubmitForm}
       initialValues={initialValues}
-      validate={validate}
+      validate={(values) =>
+        validateFormValues(values, validationSchema as yup.ObjectSchema<FormValues>)
+      }
     >
       {({ handleSubmit, form }) => (
         <AntForm layout='vertical' onFinish={handleSubmit}>
