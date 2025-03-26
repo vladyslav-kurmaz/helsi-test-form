@@ -7,14 +7,14 @@ import DocumentInfo from '../sections/DocumentInfo'
 import { FormValues } from '../types/types'
 import { initialValues } from '../constants/initialValues'
 import { FormApi } from 'final-form'
-import { useUserValidation } from '../hooks/useUserValidation'
+import { generateUserValidation } from '../helpers/generateUserValidation'
 
 const CreatePersonForm: React.FC<{
   setFormData: (values: FormValues | null) => void
 }> = ({ setFormData }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const validate = useUserValidation()
+  const validate = generateUserValidation()
 
   const resetFormState = (form: FormApi<FormValues>) => {
     form.reset()
