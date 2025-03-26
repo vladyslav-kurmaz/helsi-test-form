@@ -12,7 +12,7 @@ import {
 import { FormValues } from '../types/types'
 import { documentTypes } from '../constants/selectOptions'
 
-export const useUserValidation = () => {
+export const generateUserValidation = () => {
   const validationSchema = yup.object({
     lastName: yup
       .string()
